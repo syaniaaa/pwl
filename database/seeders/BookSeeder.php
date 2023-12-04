@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-
 class BookSeeder extends Seeder
 {
     /**
@@ -17,14 +16,17 @@ class BookSeeder extends Seeder
     public function run(): void
     {
         DB::table('books')->insert([
-            'title' => 'Laskar Pelangi',
-            'author' => 'Andrea Hirata ',
-            'year' => 2005,
-            'publisher' => 'Penerbit',
-            'city' => 'Kota',
-            'cover' => 'Cover.jpg',
-            'bookshelf_id' => 1,
+            'title' => 'Contoh_Judul',
+            'author' => 'Nama dari Author',
+            'year' => 2023,
+            'publisher' => 'nama dari publisher',
+            'city' => 'kota',
+            'cover' => 'book-cover.jpg',
+            'quantity' => '3',
             'category_id' => 1,
+            'bookshelf_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
     }
 }

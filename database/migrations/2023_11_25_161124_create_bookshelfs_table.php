@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->string('code', 10);
             $table->string('name', 255);
+            $table->timestamps();
         });
     }
 

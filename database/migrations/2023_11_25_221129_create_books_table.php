@@ -17,12 +17,14 @@ return new class extends Migration {
             $table->integer('year');
             $table->string('publisher', 255);
             $table->string('city', 255);
-            $table->string('cover', 255);
+            $table->string('cover', 255)->nullable();
+            $table->integer('quantity')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('bookshelf_id');
-            $table->unsignedBigInteger('category_id');
-            $table->timestamps();
-            $table->foreign('bookshelf_id')->references('id')->on('bookshelfs');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->dateTime('created_at')->nullable();
+            $table->dateTime('updated_at')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('bookshelf_id')->references('id')->on('bookshelfs')->onDelete('cascade');
         });
     }
 

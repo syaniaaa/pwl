@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Permission\Models\Permission as ModelsPermission;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-
-class Permission extends ModelsPermission
+class Bookshelf extends Model
 {
     use HasFactory;
+
+    protected $table = "bookshelfs";
 }
